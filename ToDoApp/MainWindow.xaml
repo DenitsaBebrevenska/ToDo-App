@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:ToDoApp"
         mc:Ignorable="d"
         Title="ToDo App" Height="450" Width="400"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        KeyDown="Window_KeyDown">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -22,16 +23,15 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
-        <Button Grid.Row="5" Grid.Column="1" Content="List ToDo" Click="AddToDoButton_Click"/>
-        <TextBox x:Name="ToDoInput" Grid.Row="3" Grid.Column="1" Background="#FF8AEDD7"/>
-       <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto" Background="#FF89E0EB">
-           <StackPanel x:Name="ToDoList" Background="#FFCAF7DD" >
-           </StackPanel>
-       </ScrollViewer>
-
-
-
-
+        <Button Grid.Row="5" Grid.Column="1" Content="List a toDo" Click="AddToDoButton_Click" FontSize="15" FontWeight="Bold"/>
+        <TextBox x:Name="ToDoInput" Text="Type your toDo here and press Enter or click the button below..."
+                 GotFocus="ToDoInput_GotFocus"
+                 Opacity="0.7"
+                 Grid.Row="3" Grid.Column="1" Background="#FFF8FCFB" BorderBrush="#FF8A8C92" SelectionTextBrush="{x:Null}"/>
+        <ScrollViewer Grid.Row="1" Grid.Column="1" VerticalScrollBarVisibility="Auto" Background="#FF89E0EB">
+            <StackPanel x:Name="ToDoList" Background="#FFE5F7B3" >
+            </StackPanel>
+        </ScrollViewer>
 
     </Grid>
 </Window>
